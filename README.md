@@ -58,11 +58,21 @@ curl.exe http://localhost:8080/hello
 
 ---
 
-## Step 3 - Minikube Deployment
+## Step 3 - Minikube Start and Image Load
 
 ```powershell
 minikube start
 minikube image load juhwanseo-kubeapi:latest
+```
+
+![Minikube Start](screenshots/minikube_start.png)
+<sub>File: screenshots/minikube_start.png</sub>
+
+---
+
+## Step 4 - Kubernetes Deployment
+
+```powershell
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 kubectl get pods
@@ -73,7 +83,7 @@ kubectl get pods
 
 ---
 
-## Step 4 - API Test Through Minikube
+## Step 5 - API Test Through Minikube
 
 ```powershell
 minikube service kubeapi-service --url
@@ -85,7 +95,7 @@ curl.exe http://<minikube-ip>:30080/hello
 
 ---
 
-## Step 5 - Scaling and Self-Healing
+## Step 6 - Scaling and Self-Healing
 
 ```powershell
 kubectl scale deployment kubeapi-deployment --replicas=5
