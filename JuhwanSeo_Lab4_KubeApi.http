@@ -1,0 +1,6 @@
+@JuhwanSeo_Lab4_KubeApi_HostAddress = http://localhost:5057
+
+GET {{JuhwanSeo_Lab4_KubeApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
