@@ -101,12 +101,24 @@ kubectl get svc
 ## Step 5 - API Test Through Minikube
 
 ```powershell
-minikube service kubeapi-service --url
-curl.exe http://<minikube-ip>:30080/hello
+minikube ip
+# Output: 192.168.49.2
 ```
 
-![K8s API Test](screenshots/k8s_api_test.png)
-<sub>File: screenshots/k8s_api_test.png</sub>
+> On Windows with Docker driver, `minikube ip` returns `192.168.49.2` but that IP is not reachable from the host.  
+> Use `kubectl port-forward` to forward a fixed port (30080) to the service instead.
+
+```powershell
+# Terminal 1: forward port 30080 to the service (keeps running)
+kubectl port-forward service/kubeapi-service 30080:8080
+
+# Terminal 2: call the API
+curl.exe http://127.0.0.1:30080/hello
+# Output: Hello from Kubernetes!
+```
+
+![API Test](screenshots/api-test.png)
+<sub>File: screenshots/api-test.png</sub>
 
 ---
 
