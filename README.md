@@ -151,5 +151,4 @@ kubectl get pods
 | 4 | Added deployment.yaml | 39edb69 |
 | 5 | Added service.yaml | d747e6e |
 | 6 | Tested the API Through Minikube | 3ec6ab1 |
-| 7 | Tested scaling and self-healing | — |
-| 8 | Final version with README | — |
+| 7 | Tested scaling and self-healing | 50c2102 |
