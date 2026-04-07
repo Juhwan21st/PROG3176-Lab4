@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubeapi-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kubeapi
+  template:
+    metadata:
+      labels:
+        app: kubeapi
+    spec:
+      containers:
+        - name: kubeapi
+          image: juhwanseo-kubeapi:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080

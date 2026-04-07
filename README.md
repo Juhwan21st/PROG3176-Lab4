@@ -72,14 +72,29 @@ minikube image load juhwanseo-kubeapi:latest
 
 ## Step 4 - Kubernetes Deployment
 
+### 4a. Apply deployment.yaml (2 replicas)
+
 ```powershell
 kubectl apply -f deployment.yaml
-kubectl apply -f service.yaml
 kubectl get pods
 ```
 
-![Pods Running](screenshots/pods_running.png)
-<sub>File: screenshots/pods_running.png</sub>
+> Deployment created with 2 replicas. Both pods are in `Running` state.
+
+![Apply Deployment](screenshots/apply_deployment_yaml.png)
+<sub>File: screenshots/apply_deployment_yaml.png</sub>
+
+### 4b. Apply service.yaml (NodePort 30080)
+
+```powershell
+kubectl apply -f service.yaml
+kubectl get svc
+```
+
+> Service created with NodePort 30080 to expose the API externally via Minikube IP.
+
+![Apply Service](screenshots/apply_service_yaml.png)
+<sub>File: screenshots/apply_service_yaml.png</sub>
 
 ---
 
@@ -118,7 +133,9 @@ kubectl get pods
 |---|---------|------|
 | 1 | Initial project setup | a96a73e |
 | 2 | Added Dockerfile | — |
-| 3 | Added Kubernetes manifests | — |
-| 4 | Verified Kubernetes deployment | — |
-| 5 | Tested scaling and self-healing | — |
-| 6 | Final version with README | — |
+| 3 | Minikube start and image load | — |
+| 4 | Added deployment.yaml | — |
+| 5 | Added service.yaml | — |
+| 6 | Verified Kubernetes deployment | — |
+| 7 | Tested scaling and self-healing | — |
+| 8 | Final version with README | — |
