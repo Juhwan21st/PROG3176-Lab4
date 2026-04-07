@@ -106,7 +106,7 @@ kubectl get pods
 
 | # | Message | Hash |
 |---|---------|------|
-| 1 | Initial project setup | — |
+| 1 | Initial project setup | a96a73e |
 | 2 | Added Dockerfile | — |
 | 3 | Added Kubernetes manifests | — |
 | 4 | Verified Kubernetes deployment | — |
