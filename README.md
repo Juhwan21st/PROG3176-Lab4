@@ -125,17 +125,19 @@ curl.exe http://127.0.0.1:30080/hello
 ## Step 6 - Scaling and Self-Healing
 
 ```powershell
+# Scale to 5 replicas
 kubectl scale deployment kubeapi-deployment --replicas=5
 kubectl get pods
+
+# Delete one pod and confirm auto-recovery
 kubectl delete pod <pod-name>
 kubectl get pods
 ```
 
-![Scaled 5 Pods](screenshots/scaled_5pods.png)
-<sub>File: screenshots/scaled_5pods.png</sub>
+> After deleting a pod, Kubernetes automatically creates a replacement to maintain 5 replicas (self-healing).
 
-![Self Healing](screenshots/self_healing.png)
-<sub>File: screenshots/self_healing.png</sub>
+![Scale and Self-Healing](screenshots/scale_and_self_healing.png)
+<sub>File: screenshots/scale_and_self_healing.png</sub>
 
 ---
 
@@ -147,7 +149,7 @@ kubectl get pods
 | 2 | Added Dockerfile | a16abae |
 | 3 | Minikube start and image load | 3e1acfa |
 | 4 | Added deployment.yaml | 39edb69 |
-| 5 | Added service.yaml | — |
-| 6 | Verified Kubernetes deployment | — |
+| 5 | Added service.yaml | d747e6e |
+| 6 | Tested the API Through Minikube | 3ec6ab1 |
 | 7 | Tested scaling and self-healing | — |
 | 8 | Final version with README | — |
