@@ -132,9 +132,9 @@ kubectl get pods
 | # | Message | Hash |
 |---|---------|------|
 | 1 | Initial project setup | a96a73e |
-| 2 | Added Dockerfile | — |
-| 3 | Minikube start and image load | — |
-| 4 | Added deployment.yaml | — |
+| 2 | Added Dockerfile | a16abae |
+| 3 | Minikube start and image load | 3e1acfa |
+| 4 | Added deployment.yaml | 39edb69 |
 | 5 | Added service.yaml | — |
 | 6 | Verified Kubernetes deployment | — |
 | 7 | Tested scaling and self-healing | — |
